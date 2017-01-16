@@ -1,0 +1,16 @@
+TlcApiService/App_Data
+TlcApiService/[Bb]in
+TlcApiService/[Oo]bj
+TlcDataAccess/[Bb]in
+TlcDataAccess/[Oo]bj
+packages
+*.suo
+*.user
+*.[Cc]ache
+*[Rr]esharper*
+*.exe
+*.dll
+*.nupkg
+*.ncrunchsolution
+*.dot[Cc]over
+*.pubxml

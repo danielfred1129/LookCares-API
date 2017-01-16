@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TLC_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbArtworks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbArtworks">
+          <Key>
+            <PropertyRef Name="kArtwork" />
+          </Key>
+          <Property Name="kArtwork" Type="int" Nullable="false" />
+          <Property Name="kLookClient" Type="int" />
+          <Property Name="vcClientID" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcClientName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcArtworkDescription" Type="nvarchar(max)" />
+          <Property Name="vcImageType" Type="nvarchar" MaxLength="255" />
+          <Property Name="fImage" Type="nvarchar" MaxLength="255" />
+          <Property Name="intImageWidth" Type="int" />
+          <Property Name="intImageHeight" Type="int" />
+          <Property Name="intFileSize" Type="int" />
+          <Property Name="vcFileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcSource" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbCustomerArtworks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbCustomerArtworks">
+          <Key>
+            <PropertyRef Name="kCustomerArtwork" />
+          </Key>
+          <Property Name="kCustomerArtwork" Type="int" Nullable="false" />
+          <Property Name="kLookClient" Type="int" />
+          <Property Name="vcFileDescription" Type="nvarchar(max)" />
+          <Property Name="vcFileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcDropBoxURL" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tbFabrics">
+          <Key>
+            <PropertyRef Name="kFabric" />
+          </Key>
+          <Property Name="kFabric" Type="int" Nullable="false" />
+          <Property Name="kLookClient" Type="int" />
+          <Property Name="kLookClientCustomer" Type="int" />
+          <Property Name="kFrame" Type="int" />
+          <Property Name="vcItemNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="intHeight" Type="int" />
+          <Property Name="intWidth" Type="int" />
+          <Property Name="vcExtrusion" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcFileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcNFCUrl" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcLookCSR" Type="nvarchar" MaxLength="255" />
+          <Property Name="dtShippedFromTLC" Type="datetime" />
+          <Property Name="dtInstalled" Type="datetime" />
+          <Property Name="vcSource" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcClientID" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcClientName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcStatus" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tbFrames">
+          <Key>
+            <PropertyRef Name="kFrame" />
+          </Key>
+          <Property Name="kFrame" Type="int" Nullable="false" />
+          <Property Name="kLookClient" Type="int" />
+          <Property Name="kLookClientCustomer" Type="int" />
+          <Property Name="dtShippedFromTLC" Type="datetime" />
+          <Property Name="dtInstalled" Type="datetime" />
+          <Property Name="vcItemNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="intWidth" Type="int" />
+          <Property Name="intHeight" Type="int" />
+          <Property Name="vcFrame" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcExtrusion" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcFinish" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcLighting" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcMountingType" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcFrameFileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcInstalled" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcLookCSR" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcInStoreLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcSource" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcClientID" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcClientName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbInstallationGuides' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbInstallationGuides">
+          <Key>
+            <PropertyRef Name="kInstallationGuide" />
+          </Key>
+          <Property Name="kInstallationGuide" Type="int" Nullable="false" />
+          <Property Name="vcDescription" Type="nvarchar(max)" />
+          <Property Name="vcType" Type="nvarchar" MaxLength="255" />
+          <Property Name="fFile" Type="nvarchar" MaxLength="255" />
+          <Property Name="intFileSize" Type="int" />
+          <Property Name="vcFileName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbInStoreLocations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbInStoreLocations">
+          <Key>
+            <PropertyRef Name="kInStoreLocation" />
+          </Key>
+          <Property Name="kInStoreLocation" Type="int" Nullable="false" />
+          <Property Name="vcInStoreLocation" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbLookClientCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbLookClientCustomers">
+          <Key>
+            <PropertyRef Name="kLookClientCustomer" />
+          </Key>
+          <Property Name="kLookClientCustomer" Type="int" Nullable="false" />
+          <Property Name="kLookClient" Type="int" />
+          <Property Name="vcClientCustomerID" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcClientCustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcShipToName" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcShipToAddress1" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcShipToAddress2" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcShipToAddress3" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcShipToAddress4" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcShipToCity" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcShipToStateProvince" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcShipToCountry" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcShipToPostal" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcShipToContact" Type="nvarchar(max)" />
+          <Property Name="vcLookCSR" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcSource" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbLookClients' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbLookClients">
+          <Key>
+            <PropertyRef Name="kLookClient" />
+          </Key>
+          <Property Name="kLookClient" Type="int" Nullable="false" />
+          <Property Name="vcClientID" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcClientName" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcSource" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbPromotionalMaterials' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbPromotionalMaterials">
+          <Key>
+            <PropertyRef Name="kPromotionalMaterial" />
+          </Key>
+          <Property Name="kPromotionalMaterial" Type="int" Nullable="false" />
+          <Property Name="vcDescription" Type="nvarchar(max)" />
+          <Property Name="vcFileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcType" Type="nvarchar" MaxLength="255" />
+          <Property Name="intFileSize" Type="int" />
+          <Property Name="fFile" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.tbUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbUsers">
+          <Key>
+            <PropertyRef Name="kUser" />
+            <PropertyRef Name="bActive" />
+            <PropertyRef Name="bInstaller" />
+          </Key>
+          <Property Name="kUser" Type="int" Nullable="false" />
+          <Property Name="kLookClient" Type="int" />
+          <Property Name="bActive" Type="bit" Nullable="false" />
+          <Property Name="kUserLevel" Type="int" />
+          <Property Name="mUserProfile" Type="nvarchar(max)" />
+          <Property Name="vcUserName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcFirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcLastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="bInstaller" Type="bit" Nullable="false" />
+          <Property Name="vcUserEmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="intCellPhoneNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcPosition" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcPassword" Type="nvarchar" MaxLength="255" />
+          <Property Name="vcCustomer" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.UserLevelPermissions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserLevelPermissions">
+          <Key>
+            <PropertyRef Name="UserLevelID" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="Permission" />
+          </Key>
+          <Property Name="UserLevelID" Type="int" Nullable="false" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Permission" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TLC_DB.dbo.UserLevels' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserLevels">
+          <Key>
+            <PropertyRef Name="UserLevelID" />
+            <PropertyRef Name="UserLevelName" />
+          </Key>
+          <Property Name="UserLevelID" Type="int" Nullable="false" />
+          <Property Name="UserLevelName" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TLC_DBModelStoreContainer">
+          <EntitySet Name="tbFabrics" EntityType="Self.tbFabrics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbFrames" EntityType="Self.tbFrames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbArtworks" EntityType="Self.tbArtworks" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbArtworks].[kArtwork] AS [kArtwork], 
+    [tbArtworks].[kLookClient] AS [kLookClient], 
+    [tbArtworks].[vcClientID] AS [vcClientID], 
+    [tbArtworks].[vcClientName] AS [vcClientName], 
+    [tbArtworks].[vcArtworkDescription] AS [vcArtworkDescription], 
+    [tbArtworks].[vcImageType] AS [vcImageType], 
+    [tbArtworks].[fImage] AS [fImage], 
+    [tbArtworks].[intImageWidth] AS [intImageWidth], 
+    [tbArtworks].[intImageHeight] AS [intImageHeight], 
+    [tbArtworks].[intFileSize] AS [intFileSize], 
+    [tbArtworks].[vcFileName] AS [vcFileName], 
+    [tbArtworks].[vcSource] AS [vcSource]
+    FROM [dbo].[tbArtworks] AS [tbArtworks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbCustomerArtworks" EntityType="Self.tbCustomerArtworks" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbCustomerArtworks].[kCustomerArtwork] AS [kCustomerArtwork], 
+    [tbCustomerArtworks].[kLookClient] AS [kLookClient], 
+    [tbCustomerArtworks].[vcFileDescription] AS [vcFileDescription], 
+    [tbCustomerArtworks].[vcFileName] AS [vcFileName], 
+    [tbCustomerArtworks].[vcDropBoxURL] AS [vcDropBoxURL]
+    FROM [dbo].[tbCustomerArtworks] AS [tbCustomerArtworks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbInstallationGuides" EntityType="Self.tbInstallationGuides" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbInstallationGuides].[kInstallationGuide] AS [kInstallationGuide], 
+    [tbInstallationGuides].[vcDescription] AS [vcDescription], 
+    [tbInstallationGuides].[vcType] AS [vcType], 
+    [tbInstallationGuides].[fFile] AS [fFile], 
+    [tbInstallationGuides].[intFileSize] AS [intFileSize], 
+    [tbInstallationGuides].[vcFileName] AS [vcFileName]
+    FROM [dbo].[tbInstallationGuides] AS [tbInstallationGuides]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbInStoreLocations" EntityType="Self.tbInStoreLocations" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbInStoreLocations].[kInStoreLocation] AS [kInStoreLocation], 
+    [tbInStoreLocations].[vcInStoreLocation] AS [vcInStoreLocation]
+    FROM [dbo].[tbInStoreLocations] AS [tbInStoreLocations]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbLookClientCustomers" EntityType="Self.tbLookClientCustomers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbLookClientCustomers].[kLookClientCustomer] AS [kLookClientCustomer], 
+    [tbLookClientCustomers].[kLookClient] AS [kLookClient], 
+    [tbLookClientCustomers].[vcClientCustomerID] AS [vcClientCustomerID], 
+    [tbLookClientCustomers].[vcClientCustomerName] AS [vcClientCustomerName], 
+    [tbLookClientCustomers].[vcShipToName] AS [vcShipToName], 
+    [tbLookClientCustomers].[vcShipToAddress1] AS [vcShipToAddress1], 
+    [tbLookClientCustomers].[vcShipToAddress2] AS [vcShipToAddress2], 
+    [tbLookClientCustomers].[vcShipToAddress3] AS [vcShipToAddress3], 
+    [tbLookClientCustomers].[vcShipToAddress4] AS [vcShipToAddress4], 
+    [tbLookClientCustomers].[vcShipToCity] AS [vcShipToCity], 
+    [tbLookClientCustomers].[vcShipToStateProvince] AS [vcShipToStateProvince], 
+    [tbLookClientCustomers].[vcShipToCountry] AS [vcShipToCountry], 
+    [tbLookClientCustomers].[vcShipToPostal] AS [vcShipToPostal], 
+    [tbLookClientCustomers].[vcShipToContact] AS [vcShipToContact], 
+    [tbLookClientCustomers].[vcLookCSR] AS [vcLookCSR], 
+    [tbLookClientCustomers].[vcSource] AS [vcSource]
+    FROM [dbo].[tbLookClientCustomers] AS [tbLookClientCustomers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbLookClients" EntityType="Self.tbLookClients" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbLookClients].[kLookClient] AS [kLookClient], 
+    [tbLookClients].[vcClientID] AS [vcClientID], 
+    [tbLookClients].[vcClientName] AS [vcClientName], 
+    [tbLookClients].[vcSource] AS [vcSource]
+    FROM [dbo].[tbLookClients] AS [tbLookClients]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbPromotionalMaterials" EntityType="Self.tbPromotionalMaterials" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbPromotionalMaterials].[kPromotionalMaterial] AS [kPromotionalMaterial], 
+    [tbPromotionalMaterials].[vcDescription] AS [vcDescription], 
+    [tbPromotionalMaterials].[vcFileName] AS [vcFileName], 
+    [tbPromotionalMaterials].[vcType] AS [vcType], 
+    [tbPromotionalMaterials].[intFileSize] AS [intFileSize], 
+    [tbPromotionalMaterials].[fFile] AS [fFile]
+    FROM [dbo].[tbPromotionalMaterials] AS [tbPromotionalMaterials]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbUsers" EntityType="Self.tbUsers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbUsers].[kUser] AS [kUser], 
+    [tbUsers].[kLookClient] AS [kLookClient], 
+    [tbUsers].[bActive] AS [bActive], 
+    [tbUsers].[kUserLevel] AS [kUserLevel], 
+    [tbUsers].[mUserProfile] AS [mUserProfile], 
+    [tbUsers].[vcUserName] AS [vcUserName], 
+    [tbUsers].[vcFirstName] AS [vcFirstName], 
+    [tbUsers].[vcLastName] AS [vcLastName], 
+    [tbUsers].[bInstaller] AS [bInstaller], 
+    [tbUsers].[vcUserEmailAddress] AS [vcUserEmailAddress], 
+    [tbUsers].[intCellPhoneNumber] AS [intCellPhoneNumber], 
+    [tbUsers].[vcPosition] AS [vcPosition], 
+    [tbUsers].[vcPassword] AS [vcPassword], 
+    [tbUsers].[vcCustomer] AS [vcCustomer]
+    FROM [dbo].[tbUsers] AS [tbUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserLevelPermissions" EntityType="Self.UserLevelPermissions" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserLevelPermissions].[UserLevelID] AS [UserLevelID], 
+    [UserLevelPermissions].[TableName] AS [TableName], 
+    [UserLevelPermissions].[Permission] AS [Permission]
+    FROM [dbo].[UserLevelPermissions] AS [UserLevelPermissions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserLevels" EntityType="Self.UserLevels" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserLevels].[UserLevelID] AS [UserLevelID], 
+    [UserLevels].[UserLevelName] AS [UserLevelName]
+    FROM [dbo].[UserLevels] AS [UserLevels]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TLC_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbFabric">
+          <Key>
+            <PropertyRef Name="kFabric" />
+          </Key>
+          <Property Name="kFabric" Type="Int32" Nullable="false" />
+          <Property Name="kLookClient" Type="Int32" />
+          <Property Name="kLookClientCustomer" Type="Int32" />
+          <Property Name="kFrame" Type="Int32" />
+          <Property Name="vcItemNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="intHeight" Type="Int32" />
+          <Property Name="intWidth" Type="Int32" />
+          <Property Name="vcExtrusion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcNFCUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcLookCSR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dtShippedFromTLC" Type="DateTime" Precision="3" />
+          <Property Name="dtInstalled" Type="DateTime" Precision="3" />
+          <Property Name="vcSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcClientID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcClientName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbFrame">
+          <Key>
+            <PropertyRef Name="kFrame" />
+          </Key>
+          <Property Name="kFrame" Type="Int32" Nullable="false" />
+          <Property Name="kLookClient" Type="Int32" />
+          <Property Name="kLookClientCustomer" Type="Int32" />
+          <Property Name="dtShippedFromTLC" Type="DateTime" Precision="3" />
+          <Property Name="dtInstalled" Type="DateTime" Precision="3" />
+          <Property Name="vcItemNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="intWidth" Type="Int32" />
+          <Property Name="intHeight" Type="Int32" />
+          <Property Name="vcFrame" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcExtrusion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcFinish" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcLighting" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcMountingType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcFrameFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcInstalled" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcLookCSR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcInStoreLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcClientID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcClientName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbArtwork">
+          <Key>
+            <PropertyRef Name="kArtwork" />
+          </Key>
+          <Property Name="kArtwork" Type="Int32" Nullable="false" />
+          <Property Name="kLookClient" Type="Int32" />
+          <Property Name="vcClientID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcClientName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcArtworkDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vcImageType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="fImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="intImageWidth" Type="Int32" />
+          <Property Name="intImageHeight" Type="Int32" />
+          <Property Name="intFileSize" Type="Int32" />
+          <Property Name="vcFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbCustomerArtwork">
+          <Key>
+            <PropertyRef Name="kCustomerArtwork" />
+          </Key>
+          <Property Name="kCustomerArtwork" Type="Int32" Nullable="false" />
+          <Property Name="kLookClient" Type="Int32" />
+          <Property Name="vcFileDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vcFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcDropBoxURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbInstallationGuide">
+          <Key>
+            <PropertyRef Name="kInstallationGuide" />
+          </Key>
+          <Property Name="kInstallationGuide" Type="Int32" Nullable="false" />
+          <Property Name="vcDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vcType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="fFile" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="intFileSize" Type="Int32" />
+          <Property Name="vcFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbInStoreLocation">
+          <Key>
+            <PropertyRef Name="kInStoreLocation" />
+          </Key>
+          <Property Name="kInStoreLocation" Type="Int32" Nullable="false" />
+          <Property Name="vcInStoreLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbLookClientCustomer">
+          <Key>
+            <PropertyRef Name="kLookClientCustomer" />
+          </Key>
+          <Property Name="kLookClientCustomer" Type="Int32" Nullable="false" />
+          <Property Name="kLookClient" Type="Int32" />
+          <Property Name="vcClientCustomerID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcClientCustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToAddress1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToAddress3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToAddress4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToCity" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToStateProvince" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToCountry" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToPostal" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcShipToContact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vcLookCSR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbLookClient">
+          <Key>
+            <PropertyRef Name="kLookClient" />
+          </Key>
+          <Property Name="kLookClient" Type="Int32" Nullable="false" />
+          <Property Name="vcClientID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbPromotionalMaterial">
+          <Key>
+            <PropertyRef Name="kPromotionalMaterial" />
+          </Key>
+          <Property Name="kPromotionalMaterial" Type="Int32" Nullable="false" />
+          <Property Name="vcDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vcFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="intFileSize" Type="Int32" />
+          <Property Name="fFile" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbUser">
+          <Key>
+            <PropertyRef Name="kUser" />
+            <PropertyRef Name="bActive" />
+            <PropertyRef Name="bInstaller" />
+          </Key>
+          <Property Name="kUser" Type="Int32" Nullable="false" />
+          <Property Name="kLookClient" Type="Int32" />
+          <Property Name="bActive" Type="Boolean" Nullable="false" />
+          <Property Name="kUserLevel" Type="Int32" />
+          <Property Name="mUserProfile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vcUserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcFirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcLastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="bInstaller" Type="Boolean" Nullable="false" />
+          <Property Name="vcUserEmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="intCellPhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcPosition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vcCustomer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserLevelPermission">
+          <Key>
+            <PropertyRef Name="UserLevelID" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="Permission" />
+          </Key>
+          <Property Name="UserLevelID" Type="Int32" Nullable="false" />
+          <Property Name="TableName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Permission" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLevel">
+          <Key>
+            <PropertyRef Name="UserLevelID" />
+            <PropertyRef Name="UserLevelName" />
+          </Key>
+          <Property Name="UserLevelID" Type="Int32" Nullable="false" />
+          <Property Name="UserLevelName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TLC_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbFabrics" EntityType="Self.tbFabric" />
+          <EntitySet Name="tbFrames" EntityType="Self.tbFrame" />
+          <EntitySet Name="tbArtworks" EntityType="Self.tbArtwork" />
+          <EntitySet Name="tbCustomerArtworks" EntityType="Self.tbCustomerArtwork" />
+          <EntitySet Name="tbInstallationGuides" EntityType="Self.tbInstallationGuide" />
+          <EntitySet Name="tbInStoreLocations" EntityType="Self.tbInStoreLocation" />
+          <EntitySet Name="tbLookClientCustomers" EntityType="Self.tbLookClientCustomer" />
+          <EntitySet Name="tbLookClients" EntityType="Self.tbLookClient" />
+          <EntitySet Name="tbPromotionalMaterials" EntityType="Self.tbPromotionalMaterial" />
+          <EntitySet Name="tbUsers" EntityType="Self.tbUser" />
+          <EntitySet Name="UserLevelPermissions" EntityType="Self.UserLevelPermission" />
+          <EntitySet Name="UserLevels" EntityType="Self.UserLevel" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TLC_DBModelStoreContainer" CdmEntityContainer="TLC_DBEntities">
+          <EntitySetMapping Name="tbFabrics">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbFabric">
+              <MappingFragment StoreEntitySet="tbFabrics">
+                <ScalarProperty Name="kFabric" ColumnName="kFabric" />
+                <ScalarProperty Name="kLookClient" ColumnName="kLookClient" />
+                <ScalarProperty Name="kLookClientCustomer" ColumnName="kLookClientCustomer" />
+                <ScalarProperty Name="kFrame" ColumnName="kFrame" />
+                <ScalarProperty Name="vcItemNumber" ColumnName="vcItemNumber" />
+                <ScalarProperty Name="vcSerialNumber" ColumnName="vcSerialNumber" />
+                <ScalarProperty Name="intHeight" ColumnName="intHeight" />
+                <ScalarProperty Name="intWidth" ColumnName="intWidth" />
+                <ScalarProperty Name="vcExtrusion" ColumnName="vcExtrusion" />
+                <ScalarProperty Name="vcFileName" ColumnName="vcFileName" />
+                <ScalarProperty Name="vcNFCUrl" ColumnName="vcNFCUrl" />
+                <ScalarProperty Name="vcLookCSR" ColumnName="vcLookCSR" />
+                <ScalarProperty Name="dtShippedFromTLC" ColumnName="dtShippedFromTLC" />
+                <ScalarProperty Name="dtInstalled" ColumnName="dtInstalled" />
+                <ScalarProperty Name="vcSource" ColumnName="vcSource" />
+                <ScalarProperty Name="vcClientID" ColumnName="vcClientID" />
+                <ScalarProperty Name="vcClientName" ColumnName="vcClientName" />
+                <ScalarProperty Name="vcStatus" ColumnName="vcStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbFrames">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbFrame">
+              <MappingFragment StoreEntitySet="tbFrames">
+                <ScalarProperty Name="kFrame" ColumnName="kFrame" />
+                <ScalarProperty Name="kLookClient" ColumnName="kLookClient" />
+                <ScalarProperty Name="kLookClientCustomer" ColumnName="kLookClientCustomer" />
+                <ScalarProperty Name="dtShippedFromTLC" ColumnName="dtShippedFromTLC" />
+                <ScalarProperty Name="dtInstalled" ColumnName="dtInstalled" />
+                <ScalarProperty Name="vcItemNumber" ColumnName="vcItemNumber" />
+                <ScalarProperty Name="intWidth" ColumnName="intWidth" />
+                <ScalarProperty Name="intHeight" ColumnName="intHeight" />
+                <ScalarProperty Name="vcFrame" ColumnName="vcFrame" />
+                <ScalarProperty Name="vcExtrusion" ColumnName="vcExtrusion" />
+                <ScalarProperty Name="vcFinish" ColumnName="vcFinish" />
+                <ScalarProperty Name="vcLighting" ColumnName="vcLighting" />
+                <ScalarProperty Name="vcMountingType" ColumnName="vcMountingType" />
+                <ScalarProperty Name="vcSerialNumber" ColumnName="vcSerialNumber" />
+                <ScalarProperty Name="vcFrameFileName" ColumnName="vcFrameFileName" />
+                <ScalarProperty Name="vcInstalled" ColumnName="vcInstalled" />
+                <ScalarProperty Name="vcLookCSR" ColumnName="vcLookCSR" />
+                <ScalarProperty Name="vcInStoreLocation" ColumnName="vcInStoreLocation" />
+                <ScalarProperty Name="vcSource" ColumnName="vcSource" />
+                <ScalarProperty Name="vcClientID" ColumnName="vcClientID" />
+                <ScalarProperty Name="vcClientName" ColumnName="vcClientName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbArtworks">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbArtwork">
+              <MappingFragment StoreEntitySet="tbArtworks">
+                <ScalarProperty Name="kArtwork" ColumnName="kArtwork" />
+                <ScalarProperty Name="kLookClient" ColumnName="kLookClient" />
+                <ScalarProperty Name="vcClientID" ColumnName="vcClientID" />
+                <ScalarProperty Name="vcClientName" ColumnName="vcClientName" />
+                <ScalarProperty Name="vcArtworkDescription" ColumnName="vcArtworkDescription" />
+                <ScalarProperty Name="vcImageType" ColumnName="vcImageType" />
+                <ScalarProperty Name="fImage" ColumnName="fImage" />
+                <ScalarProperty Name="intImageWidth" ColumnName="intImageWidth" />
+                <ScalarProperty Name="intImageHeight" ColumnName="intImageHeight" />
+                <ScalarProperty Name="intFileSize" ColumnName="intFileSize" />
+                <ScalarProperty Name="vcFileName" ColumnName="vcFileName" />
+                <ScalarProperty Name="vcSource" ColumnName="vcSource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCustomerArtworks">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbCustomerArtwork">
+              <MappingFragment StoreEntitySet="tbCustomerArtworks">
+                <ScalarProperty Name="kCustomerArtwork" ColumnName="kCustomerArtwork" />
+                <ScalarProperty Name="kLookClient" ColumnName="kLookClient" />
+                <ScalarProperty Name="vcFileDescription" ColumnName="vcFileDescription" />
+                <ScalarProperty Name="vcFileName" ColumnName="vcFileName" />
+                <ScalarProperty Name="vcDropBoxURL" ColumnName="vcDropBoxURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbInstallationGuides">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbInstallationGuide">
+              <MappingFragment StoreEntitySet="tbInstallationGuides">
+                <ScalarProperty Name="kInstallationGuide" ColumnName="kInstallationGuide" />
+                <ScalarProperty Name="vcDescription" ColumnName="vcDescription" />
+                <ScalarProperty Name="vcType" ColumnName="vcType" />
+                <ScalarProperty Name="fFile" ColumnName="fFile" />
+                <ScalarProperty Name="intFileSize" ColumnName="intFileSize" />
+                <ScalarProperty Name="vcFileName" ColumnName="vcFileName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbInStoreLocations">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbInStoreLocation">
+              <MappingFragment StoreEntitySet="tbInStoreLocations">
+                <ScalarProperty Name="kInStoreLocation" ColumnName="kInStoreLocation" />
+                <ScalarProperty Name="vcInStoreLocation" ColumnName="vcInStoreLocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbLookClientCustomers">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbLookClientCustomer">
+              <MappingFragment StoreEntitySet="tbLookClientCustomers">
+                <ScalarProperty Name="kLookClientCustomer" ColumnName="kLookClientCustomer" />
+                <ScalarProperty Name="kLookClient" ColumnName="kLookClient" />
+                <ScalarProperty Name="vcClientCustomerID" ColumnName="vcClientCustomerID" />
+                <ScalarProperty Name="vcClientCustomerName" ColumnName="vcClientCustomerName" />
+                <ScalarProperty Name="vcShipToName" ColumnName="vcShipToName" />
+                <ScalarProperty Name="vcShipToAddress1" ColumnName="vcShipToAddress1" />
+                <ScalarProperty Name="vcShipToAddress2" ColumnName="vcShipToAddress2" />
+                <ScalarProperty Name="vcShipToAddress3" ColumnName="vcShipToAddress3" />
+                <ScalarProperty Name="vcShipToAddress4" ColumnName="vcShipToAddress4" />
+                <ScalarProperty Name="vcShipToCity" ColumnName="vcShipToCity" />
+                <ScalarProperty Name="vcShipToStateProvince" ColumnName="vcShipToStateProvince" />
+                <ScalarProperty Name="vcShipToCountry" ColumnName="vcShipToCountry" />
+                <ScalarProperty Name="vcShipToPostal" ColumnName="vcShipToPostal" />
+                <ScalarProperty Name="vcShipToContact" ColumnName="vcShipToContact" />
+                <ScalarProperty Name="vcLookCSR" ColumnName="vcLookCSR" />
+                <ScalarProperty Name="vcSource" ColumnName="vcSource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbLookClients">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbLookClient">
+              <MappingFragment StoreEntitySet="tbLookClients">
+                <ScalarProperty Name="kLookClient" ColumnName="kLookClient" />
+                <ScalarProperty Name="vcClientID" ColumnName="vcClientID" />
+                <ScalarProperty Name="vcClientName" ColumnName="vcClientName" />
+                <ScalarProperty Name="vcSource" ColumnName="vcSource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbPromotionalMaterials">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbPromotionalMaterial">
+              <MappingFragment StoreEntitySet="tbPromotionalMaterials">
+                <ScalarProperty Name="kPromotionalMaterial" ColumnName="kPromotionalMaterial" />
+                <ScalarProperty Name="vcDescription" ColumnName="vcDescription" />
+                <ScalarProperty Name="vcFileName" ColumnName="vcFileName" />
+                <ScalarProperty Name="vcType" ColumnName="vcType" />
+                <ScalarProperty Name="intFileSize" ColumnName="intFileSize" />
+                <ScalarProperty Name="fFile" ColumnName="fFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUsers">
+            <EntityTypeMapping TypeName="TLC_DBModel.tbUser">
+              <MappingFragment StoreEntitySet="tbUsers">
+                <ScalarProperty Name="kUser" ColumnName="kUser" />
+                <ScalarProperty Name="kLookClient" ColumnName="kLookClient" />
+                <ScalarProperty Name="bActive" ColumnName="bActive" />
+                <ScalarProperty Name="kUserLevel" ColumnName="kUserLevel" />
+                <ScalarProperty Name="mUserProfile" ColumnName="mUserProfile" />
+                <ScalarProperty Name="vcUserName" ColumnName="vcUserName" />
+                <ScalarProperty Name="vcFirstName" ColumnName="vcFirstName" />
+                <ScalarProperty Name="vcLastName" ColumnName="vcLastName" />
+                <ScalarProperty Name="bInstaller" ColumnName="bInstaller" />
+                <ScalarProperty Name="vcUserEmailAddress" ColumnName="vcUserEmailAddress" />
+                <ScalarProperty Name="intCellPhoneNumber" ColumnName="intCellPhoneNumber" />
+                <ScalarProperty Name="vcPosition" ColumnName="vcPosition" />
+                <ScalarProperty Name="vcPassword" ColumnName="vcPassword" />
+                <ScalarProperty Name="vcCustomer" ColumnName="vcCustomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLevelPermissions">
+            <EntityTypeMapping TypeName="TLC_DBModel.UserLevelPermission">
+              <MappingFragment StoreEntitySet="UserLevelPermissions">
+                <ScalarProperty Name="UserLevelID" ColumnName="UserLevelID" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLevels">
+            <EntityTypeMapping TypeName="TLC_DBModel.UserLevel">
+              <MappingFragment StoreEntitySet="UserLevels">
+                <ScalarProperty Name="UserLevelID" ColumnName="UserLevelID" />
+                <ScalarProperty Name="UserLevelName" ColumnName="UserLevelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
